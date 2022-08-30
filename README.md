@@ -1,6 +1,6 @@
 # Modelo de aplicação de cadastro (CRUD) na memória.
 
-Os médotos presentes no projeto são:
+Os métodos presentes no projeto são:
 
 - Cadastrar
 - Alterar
