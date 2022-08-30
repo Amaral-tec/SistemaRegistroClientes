@@ -78,6 +78,12 @@ public class MenuCliente extends javax.swing.JFrame {
 
         lblCPF.setText("CPF");
 
+        txtCPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCPFActionPerformed(evt);
+            }
+        });
+
         lblEndereco.setText("Endereço");
 
         lblNumero.setText("Número");
@@ -396,14 +402,16 @@ public class MenuCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAlterarActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-         String result = JOptionPane.showInputDialog(null, "Digite o CPF que você deseja consultar", "CONSULTA", JOptionPane.INFORMATION_MESSAGE);
         
-         consultar(result);
+        String result = JOptionPane.showInputDialog(null,"Digite o CPF que você deseja consultar", "CONSULTA", JOptionPane.INFORMATION_MESSAGE);  
+    
         
-    }
-
-    private void consultar(String result) {
-    /*    Cliente cliente = ClienteMapDAO.consultar(Long.parseLong(result));
+        Cliente cliente = this.clienteDAO.consultar(Long.parseLong(result));
+        
+        if (cliente == null){
+            JOptionPane.showMessageDialog(null, "Cliente não encontrado", "ERRO",JOptionPane.INFORMATION_MESSAGE);
+            return;
+        } else {
         
         txtNome.setText(cliente.getNome());
         txtCPF.setText(cliente.getCpf().toString());
@@ -414,9 +422,14 @@ public class MenuCliente extends javax.swing.JFrame {
         txtBairro.setText(cliente.getBairro());
         txtCidade.setText(cliente.getCidade());
         txtEstado.setText(cliente.getEstado());
-        txtCEP.setText(cliente.getCep().toString()); */
+        txtCEP.setText(cliente.getCep().toString());
+        }
         
     }//GEN-LAST:event_btnConsultarActionPerformed
+
+    private void txtCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCPFActionPerformed
 
     /**
      * @param args the command line arguments
