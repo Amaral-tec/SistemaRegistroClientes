@@ -9,3 +9,7 @@ Os métodos presentes no projeto são:
 
 Interface gráfica construída em Swing utilizando a IDEA Apache NetBeans
 
+<div align="center">
+  <img src="https://github.com/Amaral-tec/resources/blob/main/SistemaRegistroCliente.JPG" />
+</div>
+
